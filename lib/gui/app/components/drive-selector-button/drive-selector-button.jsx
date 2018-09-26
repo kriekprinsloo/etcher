@@ -24,6 +24,7 @@ const Color = require('color')
 const middleEllipsis = require('./../../utils/middle-ellipsis')
 const shared = require('/./../../../../../lib/shared/units')
 
+
 const { Provider, Txt } = require('rendition')
 const { StepButton, StepNameButton, StepSelection,
   DetailsText, ChangeButton } = require('./../../styled-components')
@@ -101,11 +102,13 @@ class DriveSelectorButton extends React.PureComponent {
             </DetailsText>
           </StepSelection>
           {this.state.show ?
-            <DetailsModal
-              title={'DRIVERS DETAILS'}
-              details={this.selectedDevicesDetails()}
-              callback={() => this.setState({ show: false })}
-            />
+            (
+              <DetailsModal
+                title={'DRIVERS DETAILS'}
+                details={this.selectedDevicesDetails()}
+                callback={() => this.setState({ show: false })}
+              />
+            )
           : null
           }
         </Provider>
