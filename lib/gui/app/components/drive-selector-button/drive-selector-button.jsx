@@ -81,14 +81,15 @@ class DriveSelectorButton extends React.PureComponent {
               {this.props.driveSize}
             </DetailsText>
             { this.props.flashing || !this.props.shouldShowDrivesButton ?
-              null
-              :
-              <ChangeButton
-                plaintext
-                onClick={this.props.reselectDrive}
-              >
-                Change
-              </ChangeButton>
+              null :
+              (
+                <ChangeButton
+                  plaintext
+                  onClick={this.props.reselectDrive}
+                >
+                  Change
+                </ChangeButton>
+              )
             }
             <DetailsText>
               {this.allDevicesFooter()}
